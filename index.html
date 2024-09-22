@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,67 +10,12 @@
 <body>
 	<div class="container">
 		<h1 class="title">Redirect Tool</h1>
-		<form id="urlForm">
+		<form>
 			<label for="url-input">Enter a URL:</label>
-			<input type="text" id="url-input" name="url-input" required>
+			<input type="text" id="url-input" name="url-input">
 			<button type="submit" id="submit-btn">Redirect</button>
-			<button type="button" id="appsButton">Apps</button>
 		</form>
 	</div>
-
-	<!-- Modal for Apps Section -->
-	<div id="appsModal" class="modal" aria-hidden="true">
-		<div class="modal-content">
-			<span class="close">&times;</span>
-			<h2>Apps</h2>
-			<p><strong>1. Google Analytics</strong></p>
-			<ul>
-				<li>Track performance and analyze traffic.</li>
-			</ul>
-			<p><strong>2. Zapier</strong></p>
-			<ul>
-				<li>Automate workflows with over 3,000 apps.</li>
-			</ul>
-			<p><strong>3. Mailchimp</strong></p>
-			<ul>
-				<li>Integrate with email campaigns for better targeting.</li>
-			</ul>
-		</div>
-	</div>
-
-	<script>
-		// Modal functionality
-		const appsButton = document.getElementById('appsButton');
-		const appsModal = document.getElementById('appsModal');
-		const closeModal = document.querySelector('.close');
-
-		appsButton.onclick = function() {
-			appsModal.style.display = "block";
-			appsModal.setAttribute('aria-hidden', 'false');
-		}
-
-		closeModal.onclick = function() {
-			appsModal.style.display = "none";
-			appsModal.setAttribute('aria-hidden', 'true');
-		}
-
-		window.onclick = function(event) {
-			if (event.target === appsModal) {
-				appsModal.style.display = "none";
-				appsModal.setAttribute('aria-hidden', 'true');
-			}
-		}
-
-		// Handle form submission
-		document.getElementById('urlForm').onsubmit = function(event) {
-			event.preventDefault(); // Prevent default form submission
-			const urlInput = document.getElementById('url-input').value;
-
-			// Validate URL
-			if (urlInput) {
-				window.location.href = urlInput; // Redirect to the URL
-			}
-		}
-	</script>
+	<script src="script.js"></script>
 </body>
 </html>
