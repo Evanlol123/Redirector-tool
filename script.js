@@ -23,4 +23,9 @@ form.addEventListener('submit', function(event) {
         url = 'https://' + url;
     }
     
-    if (!url.startsWith('http://') && !url.startsWith(
+    if (!url.startsWith('http://') && !url.startsWith('https://') && !hasTLD) {
+        url = 'https://www.google.com/search?q=' + encodeURIComponent(url);
+    }
+    
+    window.location.href = url;
+});
