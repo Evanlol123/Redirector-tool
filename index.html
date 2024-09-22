@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,15 +10,16 @@
 <body>
 	<div class="container">
 		<h1 class="title">Redirect Tool</h1>
-		<form>
+		<form id="urlForm">
 			<label for="url-input">Enter a URL:</label>
-			<input type="text" id="url-input" name="url-input">
+			<input type="text" id="url-input" name="url-input" required>
 			<button type="submit" id="submit-btn">Redirect</button>
 			<button type="button" id="appsButton">Apps</button>
 		</form>
-	<script src="script.js"></script>
 	</div>
-			<div id="appsModal" class="modal">
+
+	<!-- Modal for Apps Section -->
+	<div id="appsModal" class="modal" aria-hidden="true">
 		<div class="modal-content">
 			<span class="close">&times;</span>
 			<h2>Apps</h2>
@@ -34,7 +35,42 @@
 			<ul>
 				<li>Integrate with email campaigns for better targeting.</li>
 			</ul>
-			<!-- Add more apps as needed -->
 		</div>
+	</div>
+
+	<script>
+		// Modal functionality
+		const appsButton = document.getElementById('appsButton');
+		const appsModal = document.getElementById('appsModal');
+		const closeModal = document.querySelector('.close');
+
+		appsButton.onclick = function() {
+			appsModal.style.display = "block";
+			appsModal.setAttribute('aria-hidden', 'false');
+		}
+
+		closeModal.onclick = function() {
+			appsModal.style.display = "none";
+			appsModal.setAttribute('aria-hidden', 'true');
+		}
+
+		window.onclick = function(event) {
+			if (event.target === appsModal) {
+				appsModal.style.display = "none";
+				appsModal.setAttribute('aria-hidden', 'true');
+			}
+		}
+
+		// Handle form submission
+		document.getElementById('urlForm').onsubmit = function(event) {
+			event.preventDefault(); // Prevent default form submission
+			const urlInput = document.getElementById('url-input').value;
+
+			// Validate URL
+			if (urlInput) {
+				window.location.href = urlInput; // Redirect to the URL
+			}
+		}
+	</script>
 </body>
 </html>
