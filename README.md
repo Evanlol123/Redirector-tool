@@ -1,1 +1,1 @@
-https://albibos.github.io/googleyay/
+https://redirectmeplease.vercel.app/ 
