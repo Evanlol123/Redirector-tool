@@ -13,10 +13,6 @@ const form = document.querySelector('form');
 const input = document.querySelector('#url-input');
 const tlds = [".com", ".org", ".net", ".info", ".biz", ".us", ".uk", ".co", ".me", ".io", ".ai", ".app", ".dev", ".xyz", ".store", ".online", ".site", ".tech", ".design", ".live", ".tv", ".cc", ".cd", ".name", ".pro", ".jobs", ".mobi", ".tel", ".ws", ".cloud", ".shop", ".bank", ".blog", ".photo", ".restaurant", ".travel", ".fun", ".news", ".game", ".art", ".space", ".agency", ".health", ".education", ".finance", ".consulting", ".video", ".music", ".auto", ".guru", ".chat", ".press", ".digital", ".reviews", ".solutions", ".homes", ".family", ".community", ".tips", ".voting", ".science", ".engineering", ".insurance", ".construction", ".fishing", ".photography", ".farm", ".recipes", ".wedding", ".events", ".lifestyle", ".fashion", ".games"];
 
-document.getElementById('appsButton').addEventListener('click', function() {
-            const appList = document.getElementById('appList');
-            appList.style.display = appList.style.display === 'none' || appList.style.display === '' ? 'block' : 'none';
-        });
 form.addEventListener('submit', function(event) {
     event.preventDefault();
     
