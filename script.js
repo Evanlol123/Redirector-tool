@@ -14,5 +14,5 @@ form.addEventListener('submit', function(event) {
 	if (!url.startsWith('http://') && !url.startsWith('https://') && !hasTLD) {
 		url = 'https://www.google.com/search?q=' + url;
 	}
-
+window.location.href(url);
 });
