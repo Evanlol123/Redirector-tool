@@ -11,7 +11,14 @@
 
 const form = document.querySelector('form');
 const input = document.querySelector('#url-input');
+const appButtonsContainer = document.querySelector('#app-buttons');
+const appButtons = document.querySelectorAll('.app-btn');
+
 const tlds = [".com", ".org", ".net", ".info", ".biz", ".us", ".uk", ".co", ".me", ".io", ".ai", ".app", ".dev", ".xyz", ".store", ".online", ".site", ".tech", ".design", ".live", ".tv", ".cc", ".cd", ".name", ".pro", ".jobs", ".mobi", ".tel", ".ws", ".cloud", ".shop", ".bank", ".blog", ".photo", ".restaurant", ".travel", ".fun", ".news", ".game", ".art", ".space", ".agency", ".health", ".education", ".finance", ".consulting", ".video", ".music", ".auto", ".guru", ".chat", ".press", ".digital", ".reviews", ".solutions", ".homes", ".family", ".community", ".tips", ".voting", ".science", ".engineering", ".insurance", ".construction", ".fishing", ".photography", ".farm", ".recipes", ".wedding", ".events", ".lifestyle", ".fashion", ".games"];
+
+input.addEventListener('focus', function() {
+    appButtonsContainer.style.display = 'block';
+});
 
 form.addEventListener('submit', function(event) {
     event.preventDefault();
@@ -28,4 +35,12 @@ form.addEventListener('submit', function(event) {
     }
     
     window.location.href = url;
+});
+
+// Redirect using app buttons
+appButtons.forEach(button => {
+    button.addEventListener('click', function() {
+        const url = this.getAttribute('data-url');
+        window.location.href = url;
+    });
 });
