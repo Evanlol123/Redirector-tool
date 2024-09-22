@@ -1,36 +1,48 @@
-// eruda because useful for debugging 
-(function() {
-    var script = document.createElement("script");
-    script.src = "https://cdn.jsdelivr.net/npm/eruda";
-    document.body.append(script);
-    script.onload = function() {
-        eruda.init();
-        console.log("Script Loaded");
-    };
-})();
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Redirect Tool</title>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="container">
+		<h1 class="title">Redirect Tool</h1>
+		<form>
+			<label for="url-input">Enter a URL:</label>
+			<input type="text" id="url-input" name="url-input" required>
+			<button type="submit" id="submit-btn">Redirect</button>
+			<button type="button" id="appsButton">Apps</button>
+		</form>
+	</div>
 
-const form = document.querySelector('form');
-const input = document.querySelector('#url-input');
-const tlds = [".com", ".org", ".net", ".info", ".biz", ".us", ".uk", ".co", ".me", ".io", ".ai", ".app", ".dev", ".xyz", ".store", ".online", ".site", ".tech", ".design", ".live", ".tv", ".cc", ".cd", ".name", ".pro", ".jobs", ".mobi", ".tel", ".ws", ".cloud", ".shop", ".bank", ".blog", ".photo", ".restaurant", ".travel", ".fun", ".news", ".game", ".art", ".space", ".agency", ".health", ".education", ".finance", ".consulting", ".video", ".music", ".auto", ".guru", ".chat", ".press", ".digital", ".reviews", ".solutions", ".homes", ".family", ".community", ".tips", ".voting", ".science", ".engineering", ".insurance", ".construction", ".fishing", ".photography", ".farm", ".recipes", ".wedding", ".events", ".lifestyle", ".fashion", ".games"];
+	<!-- Modal for Apps Section -->
+	<div id="appsModal" class="modal" style="display:none; position:fixed; z-index:1; left:0; top:0; width:100%; height:100%; background-color:rgba(0,0,0,0.5); padding-top:60px;">
+		<div class="modal-content" style="background-color:#fefefe; margin:5% auto; padding:20px; border:1px solid #888; width:80%; max-width:500px;">
+			<span class="close" style="color:#aaa; float:right; font-size:28px; font-weight:bold;">&times;</span>
+			<h2>Apps</h2>
+			<p><strong>1. Google Analytics</strong></p>
+			<ul>
+				<li>Track performance and analyze traffic.</li>
+			</ul>
+			<p><strong>2. Zapier</strong></p>
+			<ul>
+				<li>Automate workflows with over 3,000 apps.</li>
+			</ul>
+			<p><strong>3. Mailchimp</strong></p>
+			<ul>
+				<li>Integrate with email campaigns for better targeting.</li>
+			</ul>
+			<!-- Add more apps as needed -->
+		</div>
+	</div>
 
-form.addEventListener('submit', function(event) {
-    event.preventDefault();
-    
-    let url = input.value;
-    const hasTLD = tlds.some(tld => url.endsWith(tld));
-    
-    if (!url.startsWith('http://') && !url.startsWith('https://') && hasTLD) {
-        url = 'https://' + url;
-    }
-    
-    if (!url.startsWith('http://') && !url.startsWith('https://') && !hasTLD) {
-        url = 'https://www.google.com/search?q=' + encodeURIComponent(url);
-    }
-    
-    window.location.href = url;
-});
-
-const appsButton = document.getElementById('appsButton');
+	<script src="script.js"></script>
+	<script>
+		// Modal functionality
+		const appsButton = document.getElementById('appsButton');
 		const appsModal = document.getElementById('appsModal');
 		const closeModal = document.querySelector('.close');
 
@@ -47,3 +59,6 @@ const appsButton = document.getElementById('appsButton');
 				appsModal.style.display = "none";
 			}
 		}
+	</script>
+</body>
+</html>
