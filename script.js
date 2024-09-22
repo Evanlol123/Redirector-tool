@@ -29,3 +29,21 @@ form.addEventListener('submit', function(event) {
     
     window.location.href = url;
 });
+
+const appsButton = document.getElementById('appsButton');
+		const appsModal = document.getElementById('appsModal');
+		const closeModal = document.querySelector('.close');
+
+		appsButton.onclick = function() {
+			appsModal.style.display = "block";
+		}
+
+		closeModal.onclick = function() {
+			appsModal.style.display = "none";
+		}
+
+		window.onclick = function(event) {
+			if (event.target === appsModal) {
+				appsModal.style.display = "none";
+			}
+		}
