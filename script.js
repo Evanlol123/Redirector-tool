@@ -13,11 +13,12 @@ const form = document.querySelector('form');
 const input = document.querySelector('#url-input');
 const appButtonsContainer = document.querySelector('#app-buttons');
 const appButtons = document.querySelectorAll('.app-btn');
+const showAppsBtn = document.querySelector('#show-apps-btn');
 
 const tlds = [".com", ".org", ".net", ".info", ".biz", ".us", ".uk", ".co", ".me", ".io", ".ai", ".app", ".dev", ".xyz", ".store", ".online", ".site", ".tech", ".design", ".live", ".tv", ".cc", ".cd", ".name", ".pro", ".jobs", ".mobi", ".tel", ".ws", ".cloud", ".shop", ".bank", ".blog", ".photo", ".restaurant", ".travel", ".fun", ".news", ".game", ".art", ".space", ".agency", ".health", ".education", ".finance", ".consulting", ".video", ".music", ".auto", ".guru", ".chat", ".press", ".digital", ".reviews", ".solutions", ".homes", ".family", ".community", ".tips", ".voting", ".science", ".engineering", ".insurance", ".construction", ".fishing", ".photography", ".farm", ".recipes", ".wedding", ".events", ".lifestyle", ".fashion", ".games"];
 
-input.addEventListener('focus', function() {
-    appButtonsContainer.style.display = 'block';
+showAppsBtn.addEventListener('click', function() {
+    appButtonsContainer.style.display = appButtonsContainer.style.display === 'block' ? 'none' : 'block';
 });
 
 form.addEventListener('submit', function(event) {
