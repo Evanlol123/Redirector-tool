@@ -26,7 +26,7 @@ form.addEventListener('submit', function(event) {
     
     let url = input.value;
     const hasTLD = tlds.some(tld => url.endsWith(tld));
-    
+    url = url.trim();
     if (!url.startsWith('http://') && !url.startsWith('https://') && hasTLD) {
         url = 'https://' + url;
     }
@@ -34,8 +34,9 @@ form.addEventListener('submit', function(event) {
     if (!url.startsWith('http://') && !url.startsWith('https://') && !hasTLD) {
         url = 'https://www.google.com/search?q=' + encodeURIComponent(url);
     }
-    
-    window.location.href = url;
+    if(!url === 'undefined'){
+   window.location.href = url;
+    }
 });
 
 // Redirect using app buttons
