@@ -34,9 +34,9 @@ form.addEventListener('submit', function(event) {
     if (!url.startsWith('http://') && !url.startsWith('https://') && !hasTLD) {
         url = 'https://www.google.com/search?q=' + encodeURIComponent(url);
     }
-    if(!url === 'undefined'){
+    
    window.location.href = url;
-    }
+
 });
 
 // Redirect using app buttons
