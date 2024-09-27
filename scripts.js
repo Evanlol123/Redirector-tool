@@ -20,10 +20,9 @@ const tlds = [".com", ".org", ".net", ".info", ".biz", ".us", ".uk", ".co", ".me
 showAppsBtn.addEventListener('click', function() {
     appButtonsContainer.style.display = appButtonsContainer.style.display === 'block' ? 'none' : 'block';
 });
-
+//When Redirect button is clicked
 form.addEventListener('submit', function(event) {
     event.preventDefault();
-    
     let url = input.value;
     const hasTLD = tlds.some(tld => url.endsWith(tld));
     url = url.trim();
@@ -34,9 +33,9 @@ form.addEventListener('submit', function(event) {
     if (!url.startsWith('http://') && !url.startsWith('https://') && !hasTLD) {
         url = 'https://www.google.com/search?q=' + encodeURIComponent(url);
     }
-    
-   window.location.href = url;
-
+    if (input.value){
+window.location.href = url;
+    }
 });
 
 // Redirect using app buttons
