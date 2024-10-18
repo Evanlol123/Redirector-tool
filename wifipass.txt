@@ -21,3 +21,6 @@ wifi pass: usdist19
 
 wifi name: School wifi idgaf what the name is
 wifi pass: Yvu58C8H\a'[/bWmv6H6UFh#
+
+wifi name: TMOBILE-1BC3
+wifi pass: SNNEJAE7rldb
