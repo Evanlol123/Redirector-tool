@@ -24,3 +24,6 @@ wifi pass: Yvu58C8H\a'[/bWmv6H6UFh#
 
 wifi name: TMOBILE-1BC3
 wifi pass: SNNEJAE7rldb
+
+wifi name: JR iphone
+wifi pass: AdFG199!
